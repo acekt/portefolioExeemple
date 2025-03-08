@@ -30,23 +30,44 @@
 
   <!-- Style personnalisé pour la page Projects -->
   <style>
+    /* Styles globaux */
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--default-color);
+      background-color: var(--background-color);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Questrial', sans-serif;
+      color: var(--heading-color);
+    }
+
+    /* Section des projets */
+    .projects {
+      padding: 60px 0;
+    }
+
     .project-item {
       background-color: var(--surface-color);
-      border-radius: 10px;
+      border-radius: 15px;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .project-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .project-item img {
       border-radius: 10px;
       margin-bottom: 15px;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
 
     .project-item h3 {
@@ -67,6 +88,8 @@
       padding: 0.5rem 1.5rem;
       border-radius: 50px;
       transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
     .project-item .btn:hover {
@@ -78,6 +101,8 @@
       padding: 0.5rem 1rem;
       margin-bottom: 10px;
       display: inline-block;
+      border-radius: 50px;
+      font-weight: 500;
     }
 
     .project-item .badge.heberge {
@@ -90,6 +115,7 @@
       color: #fff;
     }
 
+    /* Filtres */
     .filters {
       margin-bottom: 30px;
       text-align: center;
@@ -103,12 +129,30 @@
       color: var(--default-color);
       border: 1px solid var(--accent-color);
       transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
     }
 
     .filters .filter-btn.active,
     .filters .filter-btn:hover {
       background-color: var(--accent-color);
       color: var(--contrast-color);
+      transform: translateY(-2px);
+    }
+
+    /* Animation AOS */
+    [data-aos] {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    [data-aos="fade-up"] {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    [data-aos="fade-up"].aos-animate {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -117,7 +161,7 @@
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="home.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">Mon portfolio</h1>
       </a>
 
@@ -169,19 +213,19 @@
         <div class="row gy-4 isotope-layout">
           <!-- Projet 1 - Web & Hébergé -->
           <div class="col-lg-4 col-md-6 isotope-item web heberge">
-            <div class="project-item">
-              <img src="assets/img/projects/project-1.jpg" class="img-fluid" alt="Projet Windev - Agence de Voyage">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="100">
+              <img src="assets/img/portfolio/portfolio-11.webp" class="img-fluid" alt="Projet Windev - Agence de Voyage">
               <span class="badge heberge">Hébergé</span>
               <h3>Projet Windev - Agence de Voyage</h3>
               <p>Application de gestion d'agence de voyage développée avec Windev. Gestion des réservations, paiements et facturations.</p>
-              <a href="https://lien-vers-projet-1.com" class="btn" target="_blank">Voir le projet</a>
+              <a href="https://acekt.github.io/site-test/" class="btn" target="_blank">Voir le projet</a>
             </div>
           </div>
 
           <!-- Projet 2 - Mobile & Non Hébergé -->
           <div class="col-lg-4 col-md-6 isotope-item mobile non-heberge">
-            <div class="project-item">
-              <img src="assets/img/projects/project-2.jpg" class="img-fluid" alt="Application Mobile Flutter">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="200">
+              <img src="assets/img/services/services-1.webp" class="img-fluid" alt="Application Mobile Flutter">
               <span class="badge non-heberge">Non Hébergé</span>
               <h3>Application Mobile Flutter</h3>
               <p>Application cross-platform pour la gestion de tâches, développée avec Flutter.</p>
@@ -191,19 +235,19 @@
 
           <!-- Projet 3 - Web & Hébergé -->
           <div class="col-lg-4 col-md-6 isotope-item web heberge">
-            <div class="project-item">
-              <img src="assets/img/projects/project-3.jpg" class="img-fluid" alt="Site Web E-commerce">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="300">
+              <img src="assets/img/portfolio/portfolio-7.webp" class="img-fluid" alt="Site Web E-commerce">
               <span class="badge heberge">Hébergé</span>
               <h3>Site Web E-commerce</h3>
               <p>Plateforme de vente en ligne développée avec Laravel et Vue.js.</p>
-              <a href="https://lien-vers-projet-3.com" class="btn" target="_blank">Voir le projet</a>
+              <a href="portfolio-details.html" class="btn">Voir les détails</a>
             </div>
           </div>
 
           <!-- Projet 4 - Web & Non Hébergé -->
           <div class="col-lg-4 col-md-6 isotope-item web non-heberge">
-            <div class="project-item">
-              <img src="assets/img/projects/project-4.jpg" class="img-fluid" alt="Blog Personnel">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="400">
+              <img src="assets/img/services/services-3.webp" class="img-fluid" alt="Blog Personnel">
               <span class="badge non-heberge">Non Hébergé</span>
               <h3>Blog Personnel</h3>
               <p>Blog développé avec WordPress pour partager mes connaissances en développement web.</p>
@@ -213,23 +257,23 @@
 
           <!-- Projet 5 - Mobile & Hébergé -->
           <div class="col-lg-4 col-md-6 isotope-item mobile heberge">
-            <div class="project-item">
-              <img src="assets/img/projects/project-5.jpg" class="img-fluid" alt="Application de Gestion de Budget">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="500">
+              <img src="assets/img/services/services-3.webp" class="img-fluid" alt="Application de Gestion de Budget">
               <span class="badge heberge">Hébergé</span>
               <h3>Application de Gestion de Budget</h3>
               <p>Application mobile pour la gestion des finances personnelles, développée avec Flutter.</p>
-              <a href="https://lien-vers-projet-5.com" class="btn" target="_blank">Voir le projet</a>
+              <a href="portfolio-details.html" class="btn">Voir les détails</a>
             </div>
           </div>
 
           <!-- Projet 6 - Web & Hébergé -->
           <div class="col-lg-4 col-md-6 isotope-item web heberge">
-            <div class="project-item">
-              <img src="assets/img/projects/project-6.jpg" class="img-fluid" alt="Site Vitrine pour Restaurant">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="600">
+              <img src="assets/img/FB_IMG_16033428985665542.jpg" class="img-fluid" alt="Site Vitrine pour Restaurant">
               <span class="badge heberge">Hébergé</span>
               <h3>Site Vitrine pour Restaurant</h3>
               <p>Site web responsive pour un restaurant, développé avec HTML, CSS et JavaScript.</p>
-              <a href="https://lien-vers-projet-6.com" class="btn" target="_blank">Voir le projet</a>
+              <a href="portfolio-details.html" class="btn">Voir les détails</a>
             </div>
           </div>
         </div>

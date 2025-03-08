@@ -26,6 +26,125 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Style personnalisé pour la page -->
+  <style>
+    /* Styles pour le carrousel */
+    .swiper {
+      width: 100%;
+      height: 500px; /* Hauteur fixe pour le carrousel */
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .swiper-slide {
+      position: relative;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000; /* Fond noir pour les images */
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Conserve les proportions de l'image */
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .swiper-slide img:hover {
+      transform: scale(1.05); /* Effet de zoom au survol */
+    }
+
+    .swiper-slide .slide-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--accent-color);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    .swiper-pagination-bullet {
+      background-color: var(--default-color);
+      opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--accent-color);
+      opacity: 1;
+    }
+
+    /* Styles pour la galerie d'images */
+    .gallery {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px; /* Hauteur fixe pour les images de la galerie */
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1); /* Effet de zoom au survol */
+    }
+
+    .gallery-item .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+
+    .gallery-item .overlay i {
+      color: #fff;
+      font-size: 2rem;
+    }
+  </style>
 </head>
 
 <body class="portfolio-details-page">
@@ -72,10 +191,51 @@
       <div class="container" data-aos="fade-up">
         <div class="row gy-4 g-lg-5">
           <div class="col-lg-6">
-            <img src="assets/img/windev/connexion.png" class="img-fluid mb-4" alt="Connexion">
-            <img src="assets/img/windev/agence-voyage-1.png" class="img-fluid mb-4" alt="Agence de Voyage 1">
-            <img src="assets/img/windev/agence-voyage-2.png" class="img-fluid mb-4" alt="Agence de Voyage 2">
-            <img src="assets/img/windev/agence-voyage-3.png" class="img-fluid mb-4" alt="Agence de Voyage 3">
+            <!-- Swiper Carousel -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <a href="assets/img/windev/Capture d’écran 2025-03-07 233712.png" class="glightbox">
+                    <img src="assets/img/windev/Capture d’écran 2025-03-07 233712.png" class="img-fluid" alt="Connexion">
+                  </a>
+                  <div class="slide-caption">Écran de connexion</div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <a href="assets/img/windev/Capture d’écran 2025-03-07 233754.png" class="glightbox">
+                    <img src="assets/img/windev/Capture d’écran 2025-03-07 233754.png" class="img-fluid" alt="Agence de Voyage 1">
+                  </a>
+                  <div class="slide-caption">Interface principale</div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <a href="assets/img/windev/Capture d’écran 2025-03-07 233809.png" class="glightbox">
+                    <img src="assets/img/windev/Capture d’écran 2025-03-07 233809.png" class="img-fluid" alt="Agence de Voyage 2">
+                  </a>
+                  <div class="slide-caption">Gestion des réservations</div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                  <a href="assets/img/windev/Capture d’écran 2025-03-07 233818.png" class="glightbox">
+                    <img src="assets/img/windev/Capture d’écran 2025-03-07 233818.png" class="img-fluid" alt="Agence de Voyage 3">
+                  </a>
+                  <div class="slide-caption">Gestion des paiements</div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                  <a href="assets/img/windev/Capture d’écran 2025-03-07 233834.png" class="glightbox">
+                    <img src="assets/img/windev/Capture d’écran 2025-03-07 233834.png" class="img-fluid" alt="Agence de Voyage 4">
+                  </a>
+                  <div class="slide-caption">Gestion des facturations</div>
+                </div>
+              </div>
+              <!-- Ajouter des boutons de navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <!-- Ajouter une pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
 
           <div class="col-lg-6">
@@ -97,6 +257,50 @@
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Galerie d'images -->
+        <div class="gallery mt-5">
+          <div class="gallery-item">
+            <a href="assets/img/windev/Capture d’écran 2025-03-07 233712.png" class="glightbox">
+              <img src="assets/img/windev/Capture d’écran 2025-03-07 233712.png" alt="Connexion">
+              <div class="overlay">
+                <i class="bi bi-zoom-in"></i>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="assets/img/windev/Capture d’écran 2025-03-07 233754.png" class="glightbox">
+              <img src="assets/img/windev/Capture d’écran 2025-03-07 233754.png" alt="Agence de Voyage 1">
+              <div class="overlay">
+                <i class="bi bi-zoom-in"></i>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="assets/img/windev/Capture d’écran 2025-03-07 233809.png" class="glightbox">
+              <img src="assets/img/windev/Capture d’écran 2025-03-07 233809.png" alt="Agence de Voyage 2">
+              <div class="overlay">
+                <i class="bi bi-zoom-in"></i>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="assets/img/windev/Capture d’écran 2025-03-07 233818.png" class="glightbox">
+              <img src="assets/img/windev/Capture d’écran 2025-03-07 233818.png" alt="Agence de Voyage 3">
+              <div class="overlay">
+                <i class="bi bi-zoom-in"></i>
+              </div>
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="assets/img/windev/Capture d’écran 2025-03-07 233834.png" class="glightbox">
+              <img src="assets/img/windev/Capture d’écran 2025-03-07 233834.png" alt="Agence de Voyage 4">
+              <div class="overlay">
+                <i class="bi bi-zoom-in"></i>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -127,6 +331,39 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Initialisation de Swiper et GLightbox -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialisation de Swiper
+      const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        effect: 'fade', // Effet de fondu
+        speed: 600,
+      });
+
+      // Initialisation de GLightbox
+      const lightbox = GLightbox({
+        selector: '.glightbox', // Sélecteur pour activer GLightbox
+        touchNavigation: true, // Navigation tactile
+        keyboardNavigation: true, // Navigation au clavier
+        closeButton: true, // Bouton de fermeture
+        loop: true, // Boucle des images
+      });
+    });
+  </script>
 </body>
 
 </html>
