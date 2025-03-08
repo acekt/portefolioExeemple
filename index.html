@@ -110,30 +110,6 @@
       animation: floatParticles 5s infinite ease-in-out;
     }
 
-    /* Section de présentation créative */
-    .creative-section {
-      margin-top: 3rem;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 1rem;
-      backdrop-filter: blur(10px);
-      opacity: 0;
-      transform: translateY(50px);
-      animation: fadeInUp 3.5s ease-out forwards;
-    }
-
-    .creative-section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-
-    .creative-section p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.6;
-    }
-
     /* Compteur de redirection */
     .countdown {
       margin-top: 2rem;
@@ -142,18 +118,6 @@
       opacity: 0;
       transform: translateY(50px);
       animation: fadeInUp 4s ease-out forwards;
-    }
-
-    /* Effet de fond animé */
-    .animated-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      animation: gradientShift 10s infinite alternate;
     }
 
     @keyframes fadeInUp {
@@ -178,25 +142,10 @@
         transform: translateY(0) translateX(0);
       }
     }
-
-    @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
   </style>
 </head>
 
 <body class="intro-page">
-
-  <!-- Effet de fond animé -->
-  <div class="animated-background"></div>
 
   <!-- Effet de particules animées -->
   <div class="particles">
@@ -211,15 +160,6 @@
     <h1 class="intro-title">Bienvenue sur mon Portfolio</h1>
     <p class="intro-subtitle">Développeur Web et Mobile | Créateur de solutions numériques innovantes</p>
 
-    <!-- Section de présentation créative -->
-    <div class="creative-section">
-      <h2>Découvrez mon univers créatif</h2>
-      <p>
-        Passionné par le développement web et mobile, je crée des solutions numériques sur mesure pour répondre à vos besoins.
-        Découvrez mes projets, mes compétences et mon parcours pour voir comment je peux vous aider à concrétiser vos idées.
-      </p>
-    </div>
-
     <!-- Bouton d'exploration -->
     <div class="intro-button">
       <a href="home.html">Explorer</a>
@@ -231,7 +171,7 @@
     </div>
   </div>
 
-  <!-- Redirection automatique après 7 secondes -->
+  <!-- Redirection automatique après 5 secondes -->
   <script>
     let timeLeft = 5;
     const timerElement = document.getElementById('timer');

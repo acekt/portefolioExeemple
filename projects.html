@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mes Projets - APINDA Christ Emmanuel Keren</title>
+  <meta name="description" content="Découvrez tous mes projets et réalisations en tant que développeur web et mobile.">
+  <meta name="keywords" content="Projets, Réalisations, Développeur Web, Développeur Mobile, Portfolio">
+  <meta name="author" content="APINDA Christ Emmanuel Keren">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Style personnalisé pour la page Projects -->
+  <style>
+    .project-item {
+      background-color: var(--surface-color);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-item img {
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: var(--heading-color);
+    }
+
+    .project-item p {
+      font-size: 1rem;
+      color: var(--default-color);
+      margin-bottom: 15px;
+    }
+
+    .project-item .btn {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+    }
+
+    .project-item .btn:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+    }
+
+    .project-item .badge {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .project-item .badge.heberge {
+      background-color: #28a745; /* Vert pour les projets hébergés */
+      color: #fff;
+    }
+
+    .project-item .badge.non-heberge {
+      background-color: #dc3545; /* Rouge pour les projets non hébergés */
+      color: #fff;
+    }
+
+    .filters {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .filters .filter-btn {
+      margin: 5px;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      background-color: var(--surface-color);
+      color: var(--default-color);
+      border: 1px solid var(--accent-color);
+      transition: all 0.3s ease;
+    }
+
+    .filters .filter-btn.active,
+    .filters .filter-btn:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+    }
+  </style>
+</head>
+
+<body class="projects-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Mon portfolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="home.html">Accueil</a></li>
+          <li><a href="home.html#portfolio">Portfolio</a></li>
+          <li><a href="home.html#services">Services</a></li>
+          <li><a href="home.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="home.html"><i class="bi bi-house"></i> Accueil</a></li>
+            <li class="breadcrumb-item active">Mes Projets</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="title-wrapper">
+        <h1>Mes Projets</h1>
+        <p>Découvrez toutes mes réalisations, classées par catégorie et statut d'hébergement.</p>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+      <div class="container" data-aos="fade-up">
+        <!-- Filtres par catégorie et statut d'hébergement -->
+        <div class="filters">
+          <button class="filter-btn active" data-filter="*">Tous</button>
+          <button class="filter-btn" data-filter=".web">Développement Web</button>
+          <button class="filter-btn" data-filter=".mobile">Développement Mobile</button>
+          <button class="filter-btn" data-filter=".desktop">Développement Desktop</button>
+          <button class="filter-btn" data-filter=".heberge">Hébergé</button>
+          <button class="filter-btn" data-filter=".non-heberge">Non Hébergé</button>
+        </div>
+
+        <!-- Grille des projets -->
+        <div class="row gy-4 isotope-layout">
+          <!-- Projet 1 - Web & Hébergé -->
+          <div class="col-lg-4 col-md-6 isotope-item web heberge">
+            <div class="project-item">
+              <img src="assets/img/projects/project-1.jpg" class="img-fluid" alt="Projet Windev - Agence de Voyage">
+              <span class="badge heberge">Hébergé</span>
+              <h3>Projet Windev - Agence de Voyage</h3>
+              <p>Application de gestion d'agence de voyage développée avec Windev. Gestion des réservations, paiements et facturations.</p>
+              <a href="https://lien-vers-projet-1.com" class="btn" target="_blank">Voir le projet</a>
+            </div>
+          </div>
+
+          <!-- Projet 2 - Mobile & Non Hébergé -->
+          <div class="col-lg-4 col-md-6 isotope-item mobile non-heberge">
+            <div class="project-item">
+              <img src="assets/img/projects/project-2.jpg" class="img-fluid" alt="Application Mobile Flutter">
+              <span class="badge non-heberge">Non Hébergé</span>
+              <h3>Application Mobile Flutter</h3>
+              <p>Application cross-platform pour la gestion de tâches, développée avec Flutter.</p>
+              <a href="portfolio-details.html" class="btn">Voir les détails</a>
+            </div>
+          </div>
+
+          <!-- Projet 3 - Web & Hébergé -->
+          <div class="col-lg-4 col-md-6 isotope-item web heberge">
+            <div class="project-item">
+              <img src="assets/img/projects/project-3.jpg" class="img-fluid" alt="Site Web E-commerce">
+              <span class="badge heberge">Hébergé</span>
+              <h3>Site Web E-commerce</h3>
+              <p>Plateforme de vente en ligne développée avec Laravel et Vue.js.</p>
+              <a href="https://lien-vers-projet-3.com" class="btn" target="_blank">Voir le projet</a>
+            </div>
+          </div>
+
+          <!-- Projet 4 - Web & Non Hébergé -->
+          <div class="col-lg-4 col-md-6 isotope-item web non-heberge">
+            <div class="project-item">
+              <img src="assets/img/projects/project-4.jpg" class="img-fluid" alt="Blog Personnel">
+              <span class="badge non-heberge">Non Hébergé</span>
+              <h3>Blog Personnel</h3>
+              <p>Blog développé avec WordPress pour partager mes connaissances en développement web.</p>
+              <a href="portfolio-details.html" class="btn">Voir les détails</a>
+            </div>
+          </div>
+
+          <!-- Projet 5 - Mobile & Hébergé -->
+          <div class="col-lg-4 col-md-6 isotope-item mobile heberge">
+            <div class="project-item">
+              <img src="assets/img/projects/project-5.jpg" class="img-fluid" alt="Application de Gestion de Budget">
+              <span class="badge heberge">Hébergé</span>
+              <h3>Application de Gestion de Budget</h3>
+              <p>Application mobile pour la gestion des finances personnelles, développée avec Flutter.</p>
+              <a href="https://lien-vers-projet-5.com" class="btn" target="_blank">Voir le projet</a>
+            </div>
+          </div>
+
+          <!-- Projet 6 - Web & Hébergé -->
+          <div class="col-lg-4 col-md-6 isotope-item web heberge">
+            <div class="project-item">
+              <img src="assets/img/projects/project-6.jpg" class="img-fluid" alt="Site Vitrine pour Restaurant">
+              <span class="badge heberge">Hébergé</span>
+              <h3>Site Vitrine pour Restaurant</h3>
+              <p>Site web responsive pour un restaurant, développé avec HTML, CSS et JavaScript.</p>
+              <a href="https://lien-vers-projet-6.com" class="btn" target="_blank">Voir le projet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Projects Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">APINDA Christ Emmanuel Keren</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Script pour les filtres -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectItems = document.querySelectorAll('.isotope-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Retirer la classe active de tous les boutons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Ajouter la classe active au bouton cliqué
+          button.classList.add('active');
+
+          const filterValue = button.getAttribute('data-filter');
+
+          projectItems.forEach(item => {
+            if (filterValue === '*' || item.classList.contains(filterValue.replace('.', ''))) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
