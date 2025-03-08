@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - APINDA Christ Emmanuel Keren</title>
-  <meta name="description" content="Détails du projet">
-  <meta name="keywords" content="Portfolio, Projet, Développeur Web">
+  <title>Contact - APINDA Christ Emmanuel Keren</title>
+  <meta name="description" content="Contactez-moi pour des opportunités de collaboration">
+  <meta name="keywords" content="Contact, Développeur Web, Développeur Mobile">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -28,7 +28,7 @@
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="portfolio-details-page">
+<body class="contact-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -39,8 +39,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Accueil</a></li>
-          <li><a href="portfolio-details.html" class="active">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -62,51 +63,81 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house"></i> Accueil</a></li>
-            <li class="breadcrumb-item active">Portfolio</li>
+            <li class="breadcrumb-item active">Contact</li>
           </ol>
         </nav>
       </div>
 
       <div class="title-wrapper">
-        <h1>Portfolio</h1>
-        <p>Détails de mes projets.</p>
+        <h1>Contact</h1>
+        <p>Contactez-moi pour des opportunités de collaboration.</p>
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
-      <div class="container" data-aos="fade-up">
-        <div class="row gy-4 g-lg-5">
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-5">
           <div class="col-lg-6">
-            <img src="assets/img/windev/connexion.png" class="img-fluid mb-4" alt="Connexion">
-            <img src="assets/img/windev/agence-voyage-1.png" class="img-fluid mb-4" alt="Agence de Voyage 1">
-            <img src="assets/img/windev/agence-voyage-2.png" class="img-fluid mb-4" alt="Agence de Voyage 2">
-            <img src="assets/img/windev/agence-voyage-3.png" class="img-fluid mb-4" alt="Agence de Voyage 3">
+            <div class="content" data-aos="fade-up" data-aos-delay="200">
+              <div class="section-category mb-3">Contact</div>
+              <h2 class="display-5 mb-4">Contactez-moi</h2>
+              <p class="lead mb-4">Je suis disponible pour des opportunités de collaboration ou des projets intéressants.</p>
+
+              <div class="contact-info mt-5">
+                <div class="info-item d-flex mb-3">
+                  <i class="bi bi-envelope-at me-3"></i>
+                  <span>apindaemmanuel@gmail.com</span>
+                </div>
+
+                <div class="info-item d-flex mb-3">
+                  <i class="bi bi-telephone me-3"></i>
+                  <span>+241 07 76 96 491</span>
+                </div>
+
+                <div class="info-item d-flex mb-4">
+                  <i class="bi bi-geo-alt me-3"></i>
+                  <span>Libreville, Gabon</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="col-lg-6">
-            <div class="position-sticky" style="top: 40px">
-              <div class="portfolio-description">
-                <h2>Projet Windev - Agence de Voyage</h2>
-                <p>
-                  Ce projet consiste en une application de gestion d'agence de voyage développée avec Windev. Les fonctionnalités incluent la gestion des réservations, des paiements, et des facturations.
-                </p>
-              </div>
+            <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body p-4 p-lg-5">
+                <form action="forms/contact.php" method="post" class="php-email-form">
+                  <div class="row gy-4">
+                    <div class="col-12">
+                      <input type="text" name="name" class="form-control" placeholder="Votre nom" required="">
+                    </div>
 
-              <div class="portfolio-info mt-5">
-                <h3>Informations du projet</h3>
-                <ul>
-                  <li><strong>Catégorie</strong> Développement d'application</li>
-                  <li><strong>Client</strong> Agence de Voyage</li>
-                  <li><strong>Date du projet</strong> 2024</li>
-                  <li><strong>Technologies</strong> Windev, HTML, CSS, JavaScript</li>
-                </ul>
+                    <div class="col-12">
+                      <input type="email" class="form-control" name="email" placeholder="Votre email" required="">
+                    </div>
+
+                    <div class="col-12">
+                      <input type="text" class="form-control" name="subject" placeholder="Sujet" required="">
+                    </div>
+
+                    <div class="col-12">
+                      <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    </div>
+
+                    <div class="col-12 text-center">
+                      <div class="loading">Chargement</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Votre message a été envoyé. Merci !</div>
+                      <button type="submit" class="btn btn-submit w-100">Envoyer</button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- /Portfolio Details Section -->
+    </section><!-- /Contact Section -->
 
   </main>
 
